@@ -60,4 +60,4 @@ Detailed project reports:
 This project was developed as part of the **Hardware Systems Laboratory** course.
 
 **Instructor:**  
-Dr. Fardine Ghavidel
+Dr. Fardin Ghavidel
