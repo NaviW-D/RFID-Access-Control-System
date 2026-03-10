@@ -17,15 +17,9 @@ The system demonstrates how **embedded hardware, microcontroller programming, an
 
 ![Hardware Setup](images/hardware.jpg)
 
-### Circuit Diagram
-
-![Circuit Diagram](images/circuit.png)
-
 ### Working Demo
 
-![Project Demo](images/demo.gif)
-
-*(Add your own images in the `images` folder and they will appear here.)*
+![Project Demo](images/demo.png)
 
 ---
 
