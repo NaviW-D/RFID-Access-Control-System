@@ -23,7 +23,73 @@ This type of system is commonly used in secure entry systems, smart buildings, a
 The hardware system consists of an Arduino board connected to an RFID reader module, a 16x2 LCD display, LEDs for status indication, and a buzzer for audio feedback.
 
 ---
+## Hardware Components
 
+| Component           | Description              |
+| ------------------- | ------------------------ |
+| Arduino Uno R3      | Main microcontroller     |
+| MFRC522 RFID Reader | Reads RFID card UID      |
+| RFID Card / Tag     | Authentication key       |
+| LCD 16x2            | Displays system messages |
+| Buzzer              | Audio feedback           |
+| Red & Green LEDs    | Access status indicators |
+| Breadboard          | Circuit prototyping      |
+| Jumper Wires        | Connections              |
+
+---
+
+## Hardware Connections
+
+### RFID RC522 → Arduino
+
+| RC522 Pin | Arduino Pin |
+| --------- | ----------- |
+| SDA       | D10         |
+| RST       | D9          |
+| MOSI      | D11         |
+| MISO      | D12         |
+| SCK       | D13         |
+| VCC       | 3.3V        |
+| GND       | GND         |
+
+### LCD 16x2 → Arduino
+
+| LCD Pin | Arduino Pin |
+| ------- | ----------- |
+| RS      | 7           |
+| E       | 6           |
+| D4      | 5           |
+| D5      | 4           |
+| D6      | 3           |
+| D7      | 2           |
+
+### Other Components
+
+| Component | Arduino Pin |
+| --------- | ----------- |
+| Buzzer    | D8          |
+| Green LED | A1          |
+| Red LED   | A0          |
+
+---
+
+## Software & Libraries
+
+The system is programmed using **Arduino C++** and uses the following libraries:
+
+* `SPI.h` – Communication protocol for the RFID module
+* `MFRC522.h` – RFID reader library
+* `LiquidCrystal.h` – LCD display control
+
+Example of the authorized RFID UID stored in the code:
+
+```cpp id="r8h3km"
+byte allowedUID[4] = {0x90, 0x89, 0x36, 0x52};
+```
+
+Only this card will be granted access.
+
+---
 ## Circuit Diagram
 
 The circuit connects the RFID module to the Arduino through the SPI interface, while the LCD display is connected using digital I/O pins.
