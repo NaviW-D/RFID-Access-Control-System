@@ -159,7 +159,7 @@ This project was developed as part of the **Digital Systems Laboratory course** 
 Faculty of Electrical and Computer Engineering.
 
 **Student:**
-Navid Rasoulian
+Navid Rasoolian
 
 **Instructor:**
 Dr. Fardin Ghavidel
