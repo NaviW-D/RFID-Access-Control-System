@@ -166,3 +166,11 @@ Dr. Fardin Ghavidel
 ## 📄 License
 
 This project is intended for **educational and research purposes**.
+
+---
+
+## Source Code
+
+The Arduino source code is available here:
+
+code/rfid_access_control.ino
