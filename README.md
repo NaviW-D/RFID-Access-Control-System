@@ -157,7 +157,7 @@ Dr. Fardin Ghavidel
 
 ---
 
-## 📄 License
+## License
 
 This project is intended for **educational and research purposes**.
 
