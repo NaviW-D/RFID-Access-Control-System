@@ -1,159 +1,171 @@
-# RFID-Access-Control-System
-Overview
+# 🔐 RFID-Based Access Control System
 
-This project implements a digital access control system using RFID technology.
-An RFID card is used as a digital key. When a user scans the card, the system reads the UID (Unique Identifier) and checks whether it is authorized. If the card is valid, access is granted; otherwise, access is denied.
+## 📌 Project Overview
 
-The system provides visual and audio feedback using an LCD display, LEDs, and a buzzer.
+This project implements a **contactless access control system using RFID technology**.
+An RFID card is used as a digital authentication key. When a card is scanned, the system reads its **UID (Unique Identifier)** and compares it with a predefined authorized UID stored in the microcontroller.
 
-This project was developed as part of the Digital Systems Laboratory course in the Electrical and Computer Engineering department.
+If the UID matches, the system grants access and provides visual and audio feedback. Otherwise, access is denied.
 
-Features
+The system demonstrates how **embedded hardware, microcontroller programming, and communication protocols** can be integrated to build a simple but practical security solution.
 
-Contactless authentication using RFID cards
+---
 
-UID-based access control
+## 🖼 Project Demonstration
 
-LCD interface for system messages
+### Hardware Setup
 
-LED indicators for system status
+![Hardware Setup](images/hardware.jpg)
 
-Buzzer feedback for accepted or rejected cards
+### Circuit Diagram
 
-Secure access verification
+![Circuit Diagram](images/circuit.png)
 
-System responses:
+### Working Demo
 
-Card Status	LED	LCD Message	Buzzer
-Valid card	Green LED	Access Granted	1 beep
-Invalid card	Red LED	Access Denied	2 beeps
-Hardware Components
+![Project Demo](images/demo.gif)
 
-The hardware implementation uses the following components:
+*(Add your own images in the `images` folder and they will appear here.)*
 
-Arduino Uno R3
+---
 
-RFID Reader RC522
+## ⚙️ System Features
 
-RFID Card / Tag
+* RFID card authentication
+* UID-based access verification
+* LCD interface for real-time status messages
+* Buzzer audio feedback
+* LED indicators for access status
+* Simple and scalable embedded security logic
 
-LCD Display 16x2
+---
 
-Buzzer
+## 🧠 How the System Works
 
-LEDs (Red and Green)
+The workflow of the system is as follows:
 
-Breadboard
+1. The system initializes and displays
+   **"RFID Ready – Tap Card"** on the LCD.
 
-Jumper wires
+2. A user places an RFID card near the reader.
 
-These components create a simple embedded security system for access control. 
+3. The **MFRC522 RFID module** reads the card's UID.
 
-گزارشکار_پروژه_آز_سیستم_2_سخت_…
+4. The Arduino compares the scanned UID with the stored authorized UID.
 
-System Architecture
+5. If the UID matches:
 
-The system works according to the following process:
+   * Green LED turns on
+   * LCD displays **Access Granted**
+   * Buzzer beeps once
 
-System powers on.
+6. If the UID does not match:
 
-LCD displays "RFID Ready – Tap Card".
+   * Red LED turns on
+   * LCD displays **Access Denied**
+   * Buzzer beeps twice
 
-User places RFID card near the reader.
+7. After a short delay, the system resets and waits for the next card.
 
-RFID module reads the card UID.
+This mechanism is a simplified example of the logic used in real-world **electronic access control systems**.
 
-Microcontroller compares the UID with stored authorized UID.
+---
 
-If the UID matches:
+## 🧰 Hardware Components
 
-Green LED turns ON
+| Component           | Description              |
+| ------------------- | ------------------------ |
+| Arduino Uno R3      | Main microcontroller     |
+| MFRC522 RFID Reader | Reads RFID card UID      |
+| RFID Card / Tag     | Authentication key       |
+| LCD 16x2            | Displays system messages |
+| Buzzer              | Audio feedback           |
+| Red & Green LEDs    | Access status indicators |
+| Breadboard          | Circuit prototyping      |
+| Jumper Wires        | Connections              |
 
-LCD shows Access Granted
+---
 
-Buzzer beeps once
+## 🔌 Hardware Connections
 
-If the UID does not match:
+### RFID RC522 → Arduino
 
-Red LED turns ON
+| RC522 Pin | Arduino Pin |
+| --------- | ----------- |
+| SDA       | D10         |
+| RST       | D9          |
+| MOSI      | D11         |
+| MISO      | D12         |
+| SCK       | D13         |
+| VCC       | 3.3V        |
+| GND       | GND         |
 
-LCD shows Access Denied
+### LCD 16x2 → Arduino
 
-Buzzer beeps twice
+| LCD Pin | Arduino Pin |
+| ------- | ----------- |
+| RS      | 7           |
+| E       | 6           |
+| D4      | 5           |
+| D5      | 4           |
+| D6      | 3           |
+| D7      | 2           |
 
-System resets and waits for the next card.
+### Other Components
 
-Hardware Connections
-RFID RC522 → Arduino
-RC522 Pin	Arduino Pin
-SDA	D10
-RST	D9
-MOSI	D11
-MISO	D12
-SCK	D13
-VCC	3.3V
-GND	GND
-LCD 16x2 → Arduino
-LCD Pin	Arduino Pin
-RS	7
-E	6
-D4	5
-D5	4
-D6	3
-D7	2
-Other Connections
-Component	Pin
-Buzzer	D8
-Green LED	A1
-Red LED	A0
-Software Libraries
+| Component | Arduino Pin |
+| --------- | ----------- |
+| Buzzer    | D8          |
+| Green LED | A1          |
+| Red LED   | A0          |
 
-The project uses the following Arduino libraries:
+---
 
-SPI.h – communication protocol between Arduino and RFID module
+## 💻 Software & Libraries
 
-MFRC522.h – RFID reader library
+The system is programmed using **Arduino C++** and uses the following libraries:
 
-LiquidCrystal.h – LCD control library
+* `SPI.h` – Communication protocol for the RFID module
+* `MFRC522.h` – RFID reader library
+* `LiquidCrystal.h` – LCD display control
 
-Example Authorized UID
+Example of the authorized RFID UID stored in the code:
 
-Example UID stored in the program:
-
+```cpp id="r8h3km"
 byte allowedUID[4] = {0x90, 0x89, 0x36, 0x52};
+```
 
-Only this RFID card will unlock the system.
+Only this card will be granted access.
 
-How to Run the Project
+---
 
-Install Arduino IDE
+## 🚀 How to Run the Project
 
-Install the required libraries:
+1. Install **Arduino IDE**
+2. Install required libraries:
 
-MFRC522
+   * MFRC522
+   * LiquidCrystal
+3. Connect the hardware according to the wiring table
+4. Upload the code to the Arduino board
+5. Scan an RFID card near the reader
+6. Observe the system response on the LCD, LEDs, and buzzer
 
-LiquidCrystal
+---
 
-Connect the hardware according to the wiring diagram
+## 🎓 Academic Information
 
-Upload the Arduino code
+This project was developed as part of the **Digital Systems Laboratory course** in the
+Faculty of Electrical and Computer Engineering.
 
-Open the Serial Monitor (optional)
+**Student:**
+Navid Rasoulian
 
-Scan an RFID card
+**Instructor:**
+Dr. Fardin Ghavidel
 
-Applications
+---
 
-This type of system can be used in many real-world scenarios:
+## 📄 License
 
-Smart door locks
-
-Building access systems
-
-Smart cabinets
-
-Attendance systems
-
-Warehouse tracking
-
-RFID technology is widely used because it allows secure, contactless identification using radio frequency signals.
+This project is intended for **educational and research purposes**.
