@@ -1,6 +1,6 @@
-# 🔐 RFID-Based Access Control System
+# RFID-Based Access Control System
 
-## 📌 Project Overview
+## Project Overview
 
 This project implements a **contactless access control system using RFID technology**.
 An RFID card is used as a digital authentication key. When a card is scanned, the system reads its **UID (Unique Identifier)** and compares it with a predefined authorized UID stored in the microcontroller.
@@ -11,7 +11,7 @@ The system demonstrates how **embedded hardware, microcontroller programming, an
 
 ---
 
-## 🖼 Project Demonstration
+## Project Demonstration
 
 ### Hardware Setup
 
@@ -29,7 +29,7 @@ The system demonstrates how **embedded hardware, microcontroller programming, an
 
 ---
 
-## ⚙️ System Features
+## System Features
 
 * RFID card authentication
 * UID-based access verification
@@ -40,7 +40,7 @@ The system demonstrates how **embedded hardware, microcontroller programming, an
 
 ---
 
-## 🧠 How the System Works
+## How the System Works
 
 The workflow of the system is as follows:
 
@@ -71,7 +71,7 @@ This mechanism is a simplified example of the logic used in real-world **electro
 
 ---
 
-## 🧰 Hardware Components
+## Hardware Components
 
 | Component           | Description              |
 | ------------------- | ------------------------ |
@@ -86,7 +86,7 @@ This mechanism is a simplified example of the logic used in real-world **electro
 
 ---
 
-## 🔌 Hardware Connections
+## Hardware Connections
 
 ### RFID RC522 → Arduino
 
@@ -121,7 +121,7 @@ This mechanism is a simplified example of the logic used in real-world **electro
 
 ---
 
-## 💻 Software & Libraries
+## Software & Libraries
 
 The system is programmed using **Arduino C++** and uses the following libraries:
 
@@ -139,7 +139,7 @@ Only this card will be granted access.
 
 ---
 
-## 🚀 How to Run the Project
+## How to Run the Project
 
 1. Install **Arduino IDE**
 2. Install required libraries:
@@ -153,13 +153,10 @@ Only this card will be granted access.
 
 ---
 
-## 🎓 Academic Information
+## Academic Information
 
 This project was developed as part of the **Digital Systems Laboratory course** in the
 Faculty of Electrical and Computer Engineering.
-
-**Student:**
-Navid Rasoolian
 
 **Instructor:**
 Dr. Fardin Ghavidel
